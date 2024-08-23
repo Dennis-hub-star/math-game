@@ -1,0 +1,497 @@
+/* Width 960 */
+
+@media (max-width: 60em) {
+  .main-container {
+    width: 80rem;
+    margin: 3rem auto;
+
+    /* height: 90rem; */
+  }
+
+  .instructions-container {
+    padding-top: 3.5rem !important;
+
+    margin-top: 10rem !important;
+  }
+
+  .instructions-sub-heading {
+    font-size: 2rem;
+
+    margin-bottom: 1.7rem;
+  }
+
+  .instructions-sections-container {
+    margin: 5rem;
+    padding: 3.5rem;
+    /* height: 40rem; */
+  }
+}
+
+/* Width 800 */
+@media (max-width: 50em) {
+  .main-container {
+    width: 65rem;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+
+  .clear-icon,
+  .submit-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  .instructions-heading {
+    font-size: 3.3rem;
+  }
+
+  .instructions-sections-container {
+    margin: 4rem;
+    padding: 3rem;
+    /* height: 40rem; */
+  }
+  .instructions-parent {
+    width: 51rem;
+  }
+
+  .instructions-sub-heading {
+    font-size: 1.8rem;
+
+    margin-bottom: 1.7rem;
+  }
+
+  .timed-btn,
+  .instructions-btn,
+  .submit,
+  .view-score-btn,
+  .try-again,
+  .untimed-btn,
+  .play-btn,
+  .clear-btn {
+    width: 10rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+  }
+
+  .intro-paragraph {
+    width: 35rem;
+
+    margin-top: 2rem;
+  }
+
+  .section li,
+  .instructions-intro-paragraph {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #474444;
+  }
+
+  .intro {
+    font-size: 1.3rem;
+
+    margin: 2rem auto;
+    width: 50rem;
+    /* padding-bottom: 10rem; */
+  }
+
+  .game-on-paragraph {
+    font-size: 1.3rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .btn-container {
+    height: 23rem;
+    width: 100%;
+
+    /* border-radius: 2rem; */
+    padding: 0rem 2rem 0rem 2rem;
+    margin-bottom: 0rem;
+    transition: all 2s;
+    padding-bottom: 7rem;
+  }
+
+  .target-text,
+  .score-text {
+    font-size: 2rem;
+  }
+
+  .target-number,
+  .score-number {
+    /* display: flex; */
+    /* text-align: center; */
+    font-size: 3.5rem;
+  }
+
+  .input-field {
+    border-radius: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    height: 3.8rem;
+    width: 24rem;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c06b4c;
+  }
+
+  .btn {
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 0.4rem;
+    gap: 1.2rem;
+  }
+
+  .count-down {
+    font-size: 3rem;
+  }
+
+  .timed-btn:hover,
+  .submit:hover,
+  .instructions-btn:hover,
+  .untimed-btn:hover,
+  .view-score-btn:hover,
+  .try-again:hover,
+  .play-btn:hover,
+  .clear-btn:hover {
+    width: 11rem;
+    height: 3.7rem;
+    transition: all 0.5s;
+  }
+}
+
+/* Width 656 */
+
+@media (max-width: 41em) {
+  .main-container {
+    width: 57rem;
+    margin: 1.5rem auto;
+  }
+
+  .instructions-parent {
+    width: 41rem;
+  }
+
+  .instructions-sections-container {
+    margin: 3.5rem;
+    padding: 3rem;
+  }
+
+  .instructions-sections-container {
+    margin: 3rem;
+    padding: 2.5rem;
+    /* height: 40rem; */
+  }
+
+  /* .section li,
+  .instructions-intro-paragraph {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #474444;
+  } */
+
+  .intro {
+    font-size: 1.3rem;
+    /* background-color: green; */
+    margin: 2rem auto;
+    width: 40rem;
+    padding-bottom: 8rem;
+  }
+
+  .instructions-sub-heading {
+    font-size: 1.6rem;
+
+    margin-bottom: 1.7rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .instructions-heading {
+    font-size: 2.5rem;
+  }
+
+  .section li,
+  .instructions-intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* Width 576 */
+
+@media (max-width: 36em) {
+  .main-container {
+    width: 45rem;
+    margin: 1.5rem auto;
+  }
+
+  .timed-btn,
+  .instructions-btn,
+  .submit,
+  .view-score-btn,
+  .try-again,
+  .untimed-btn,
+  .play-btn,
+  .clear-btn {
+    font-size: 1.1rem;
+  }
+
+  .instructions-parent {
+    width: 31rem;
+  }
+
+  .instructions-sections-container {
+    margin: 3rem;
+    padding: 2rem;
+    /* height: 40rem; */
+  }
+
+  .instructions-sub-heading {
+    font-size: 1.5rem;
+
+    margin-bottom: 1.7rem;
+  }
+
+  .section li,
+  .instructions-intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 3rem;
+    line-height: 2rem;
+  }
+
+  .instructions-container {
+    padding-top: 2.7rem !important;
+
+    margin-top: 10rem !important;
+  }
+
+  /* Animation testing */
+}
+
+/* Width 576 */
+
+@media (max-width: 28em) {
+  .main-container {
+    width: 37rem;
+    margin: 1.5rem auto;
+  }
+
+  .instructions-parent {
+    width: 21rem;
+  }
+
+  .instructions-sections-container {
+    margin: 2.5rem;
+    padding: 1.7rem;
+  }
+
+  .btn-container {
+    height: 22.5rem;
+    padding: 0rem 2rem 0rem 2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 7rem;
+  }
+
+  .btn {
+    height: 3.7rem;
+    width: 3.7rem;
+
+    border-radius: 0.3rem;
+    gap: 1.2rem;
+  }
+
+  .intro {
+    font-size: 1.3rem;
+    /* background-color: green; */
+    margin: 2rem auto;
+    width: 28rem;
+    padding-bottom: 8rem;
+  }
+
+  .intro-paragraph {
+    width: 35rem;
+
+    margin-top: 2rem;
+    padding: 0rem 4rem;
+  }
+
+  /* .intro {
+    font-size: 1.1rem;
+
+    margin: 2rem auto;
+    width: 50rem;
+  
+  } */
+
+  .game-on-paragraph {
+    font-size: 1.3rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+  }
+
+  .instructions-heading {
+    font-size: 2.2rem;
+  }
+
+  .target-number,
+  .score-number {
+    /* display: flex; */
+    /* text-align: center; */
+    font-size: 3rem;
+  }
+
+  .target-text,
+  .score-text {
+    font-size: 1.7rem;
+  }
+
+  /* .section li,
+  .instructions-intro-paragraph {
+    line-height: 1.6rem;
+  } */
+
+  /* Animation testing */
+}
+
+/* Width 448 */
+
+@media (max-width: 18em) {
+  .main-container {
+    width: 31rem;
+    margin: 1.5rem auto;
+  }
+
+  .btn-container {
+    height: 21.7rem;
+    padding: 0rem 2rem 0rem 2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 5rem;
+  }
+
+  .btn {
+    height: 2.9rem;
+    width: 2.9rem;
+
+    border-radius: 0.4rem;
+
+    font-size: 0.5rem;
+  }
+
+  .buttons {
+    display: flex;
+    margin-top: 10rem;
+    gap: 1.5rem;
+  }
+
+  .math-operator-btns {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .math-operator-btns .btn {
+    font-size: 1.4rem;
+  }
+
+  .buttons .btn {
+    font-size: 1.2rem;
+  }
+
+  .count-down {
+    font-size: 2.7rem;
+  }
+
+  .input-field {
+    height: 3.5rem;
+    width: 18.5rem;
+    border-radius: 1.5rem;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .input-field-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+
+    margin-bottom: 3rem;
+  }
+
+  .submit {
+    margin-left: 0rem;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
+  .section li,
+  .instructions-intro-paragraph {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    color: #474444;
+  }
+
+  .heading-container {
+    margin-top: 5rem;
+  }
+
+  .timed-btn,
+  .instructions-btn,
+  .submit,
+  .view-score-btn,
+  .try-again,
+  .untimed-btn,
+  .play-btn,
+  .clear-btn {
+    width: 8rem;
+    height: 2.7rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+  }
+
+  .instructions {
+    display: flex;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: center;
+    padding-left: 0rem;
+    margin-left: -3rem;
+
+    /* margin-bottom: 4rem;
+    margin-top: 4rem; */
+  }
+  .arrow-btn {
+    height: 2rem;
+    width: 2rem;
+    color: #614cc0;
+    /* animation: 3s linear 1s infinite alternate slidein; */
+
+    /* Animation testing */
+    animation-name: slideLeft;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+  }
+
+  /* .arrowBtn:hover {
+    animation-duration: 1s;
+  } */
+  /* 
+  @keyframes slideLeft {
+    50% {
+      transform: translateX(0.5rem);
+    }
+  } */
+}

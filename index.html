@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Game</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+  </head>
+  <body>
+    <!-- <div class="game-background overlay"> -->
+    <div class="main-container">
+      <div class="instructions">
+        <ion-icon
+          class="arrow-btn"
+          name="arrow-forward-circle-outline"
+        ></ion-icon>
+        <button class="instructions-btn">Instructions</button>
+      </div>
+      <div class="heading-container">
+        <h1 class="heading">The <span class="math">Math</span> Mastery</h1>
+      </div>
+      <!-- 
+      <section class="completed intro">
+        <p class="intro-paragraph">
+          "The clock has run out. You didn complete the puzzle in time, but dont
+          be discouraged—try again!"
+        </p>
+        <button class="view-score-btn">instructions</button>
+      </section> -->
+      <!-- <section class="sections"> -->
+      <section class="intro">
+        <p class="intro-paragraph">
+          Prove your Math Mastery by solving puzzles that require you to use a
+          set of numbers to hit the exact target. Choose between timed
+          challenges for quick thinking or untimed modes for deep calculation.
+        </p>
+        <div class="intro-btns">
+          <button class="untimed-btn time-btn">Hard</button>
+          <button class="timed-btn time-btn">Easy</button>
+        </div>
+      </section>
+
+      <section class="game hidden-xaxis hidden">
+        <p class="intro-paragraph game-on-paragraph">
+          The target number is the number you need to calculate. Use each number
+          from the set exactly once to reach this value through a combination of
+          mathematical operations.
+        </p>
+
+        <div class="target">
+          <h3 class="target-text">Target Number:</h3>
+          <h1 class="target-number"></h1>
+        </div>
+
+        <div class="input-field-container">
+          <input class="input-field" type="text" disabled />
+          <div class="submit-clear-btns">
+            <button class="clear-btn">
+              Clear
+              <ion-icon class="clear-icon" name="trash-outline"></ion-icon>
+            </button>
+
+            <button class="submit">
+              Submit
+
+              <ion-icon class="submit-icon" name="archive-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <div class="buttons"></div>
+
+          <div class="math-operator-btns">
+            <button class="btn">*</button>
+            <button class="btn">+</button>
+            <button class="btn">-</button>
+            <button class="btn">(</button>
+            <button class="btn">)</button>
+            <button class="btn">/</button>
+          </div>
+          <div class="timer">
+            <div class="count-down"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="completed intro hidden-xaxis hidden">
+        <p class="intro-paragraph">
+          "The clock has run out. You didn complete the puzzle in time, but dont
+          be discouraged—try again!"
+        </p>
+        <button class="view-score-btn">View Score</button>
+      </section>
+      <section class="results intro hidden-xaxis hidden">
+        <div class="score">
+          <h3 class="score-text">Your Final Score:</h3>
+          <h1 class="score-number"></h1>
+        </div>
+        <div class="feedback-container">
+          <!-- <p class="intro-paragraph">
+            You scored under 5. Don’t be discouraged—use this as a learning
+            opportunity and try again!
+          </p> -->
+        </div>
+        <button class="try-again">Try Again</button>
+      </section>
+      <!-- </section> -->
+    </div>
+    <!-- </div> -->
+
+    <div class="instructions-container main-container hidden">
+      <div class="instructions-heading-container">
+        <!-- <div class="progress"></div> -->
+
+        <h1 class="instructions-heading">Game Instructions</h1>
+      </div>
+      <div class="instructions-sections-container">
+        <div class="instructions-parent">
+          <!-- <button class="scroll">Scroll</button> -->
+          <section>
+            <p class="instructions-intro-paragraph">
+              Welcome to the Number Challenge Game! Your objective is to reach
+              the target number by performing mathematical operations using the
+              given set of numbers. The game tests your mental agility and
+              problem-solving skills under pressure.
+            </p>
+          </section>
+          <section class="section">
+            <h3 class="instructions-sub-heading">Game Overview:</h3>
+            <ul>
+              <li>You’ll be given a target number and a set of numbers.</li>
+              <li>
+                Your goal is to use any combination of the numbers from the set
+                to reach the target number exactly.
+              </li>
+              <li>
+                You can use addition <span class="span">(+)</span>, subtraction
+                <span class="span">(-)</span>, multiplication
+                <span class="span">(*)</span>, or division
+                <span class="span">(/)</span> to achieve the target.
+              </li>
+            </ul>
+          </section>
+          <section class="section">
+            <h3 class="instructions-sub-heading">Important Rules:</h3>
+            <ol>
+              <li>
+                <span class="span">Single Use:</span> Each number in the set can
+                be used only once in your calculations.
+              </li>
+              <li>
+                <span class="span">Time Limit:</span>
+                <ul class="sub-list">
+                  <li>
+                    For the Hard Level, you have 6 minutes to complete the
+                    challenge.
+                  </li>
+                  <li>
+                    For the Easy Level, you have 3 minutes to complete the
+                    challenge.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="span">Operations Allowed:</span> You can use any
+                combination of addition, subtraction, multiplication, and
+                division to reach the target.
+              </li>
+              <li>
+                <span class="span">No Remainders: </span>If you perform
+                division, the result must be a whole number (no fractions or
+                decimals allowed).
+              </li>
+              <li>
+                <span class="span">Order of Operations:</span> You can choose
+                the order in which to apply operations. Standard math rules
+                (PEMDAS/BODMAS) apply, so multiplication and division take
+                precedence over addition and subtraction unless you use
+                parentheses to change the order.
+              </li>
+            </ol>
+          </section>
+          <section class="section">
+            <h3 class="instructions-sub-heading">How to Play:</h3>
+            <ol>
+              <li>
+                <span class="span">Start the Timer:</span> Once you start the
+                level, the timer will begin counting down.
+              </li>
+              <li>
+                <span class="span">Analyze the Numbers:</span> Look at the
+                target number and the set of numbers provided. Plan your
+                strategy to combine them in the best way.
+              </li>
+              <li>
+                <span class="span"> Calculate Your Answer:</span> Use mental
+                math, pen and paper, or a calculator (if allowed by your game’s
+                rules) to test different combinations.
+              </li>
+              <li>
+                <span class="span">Submit Your Solution:</span> Once you believe
+                you’ve reached the target number, submit your answer.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
+      <div class="play-btn-container">
+        <button class="play-btn">Play</button>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
