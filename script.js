@@ -38,9 +38,10 @@ let numSetCounter = 0;
 let inputSum = "";
 let playerScore = 0;
 let level = "Easy";
+let data;
 
 // Numbers for the game WITHOUT a timer
-const noTimerData = [
+const hardLevelData = [
   { number: 47, setOfNumbers: [17, 29, 11, 5, 8, 3] },
   { number: 64, setOfNumbers: [23, 17, 7, 18, 12, 2] },
   { number: 79, setOfNumbers: [19, 33, 10, 4, 9, 6] },
@@ -53,7 +54,7 @@ const noTimerData = [
   { number: 163, setOfNumbers: [50, 20, 8, 30, 12, 10] },
 ];
 // Numbers for the game WITH a timer
-const timerData = [
+const easyLevelData = [
   { number: 17, setOfNumbers: [8, 15, 23, 5, 12, 1] },
   { number: 26, setOfNumbers: [7, 19, 30, 2, 14, 11] },
   { number: 31, setOfNumbers: [9, 20, 13, 5, 8, 24] },
@@ -95,35 +96,9 @@ const renderFeedBack = function (feedback) {
 
 // RESABLE FUNCTIONS
 
-const inputFieldValue = function (btnActivity) {
-  const data = level === "Easy" ? timerData : noTimerData;
-
-  timerNumCalc(data).forEach((el) =>
-    el.addEventListener("click", function (e) {
-      e.target.style.backgroundColor = "#f8f5f3";
-      const target = e.target.textContent;
-      inputSum += String(target);
-
-      inputField.value = inputSum;
-      e.target.disabled = btnActivity;
-    })
-  );
-};
-
-const clearMainContainer = function () {
-  btnContainer.innerHTML = "";
-  intro.classList.toggle("hidden-xaxis");
-  game.classList.toggle("hidden");
-  // game.classList.add();
-  setTimeout(() => {
-    intro.classList.toggle("hidden");
-    game.classList.remove("hidden-xaxis");
-  }, 500);
-};
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
 const timerNumCalc = function (data) {
+  if (numSetCounter === data.length) return;
+  // const currentSet = data[numSetCounter].setOfNumbers;
   const currentSet = data[numSetCounter].setOfNumbers;
 
   target.textContent = data[numSetCounter].number;
@@ -140,10 +115,42 @@ const timerNumCalc = function (data) {
   return btnEls;
 };
 
+// console.log(timerNumCalc(easyLevelData));
+
+const clearMainContainer = function () {
+  btnContainer.innerHTML = "";
+  intro.classList.toggle("hidden-xaxis");
+  game.classList.toggle("hidden");
+  // game.classList.add();
+  setTimeout(() => {
+    intro.classList.toggle("hidden");
+    game.classList.remove("hidden-xaxis");
+  }, 500);
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+const inputFieldValue = function (btnActivity) {
+  data = level === "Easy" ? easyLevelData : hardLevelData;
+  // console.log(data);
+  if (numSetCounter === data.length) return;
+
+  timerNumCalc(data).forEach((el) =>
+    el.addEventListener("click", function (e) {
+      e.target.style.backgroundColor = "#f8f5f3";
+      const target = e.target.textContent;
+      inputSum += String(target);
+
+      inputField.value = inputSum;
+      e.target.disabled = btnActivity;
+    })
+  );
+};
+
 introBtns.addEventListener("click", function (e) {
   const targetIntroBtn = e.target;
   const targetContent = targetIntroBtn.textContent === "Hard" ? "Hard" : "Easy";
-  // const targetContent = targetIntroBtn.textContent === "Hard" ?? "Easy";
+
   level = targetContent;
   instructionsBtnContainer.classList.toggle("hidden");
   const gameTimeInSecs = level === "Easy" ? easyLevelTime : hardLevelTime;
@@ -154,27 +161,6 @@ introBtns.addEventListener("click", function (e) {
   inputFieldValue(true);
 
   countDown(gameTimeInSecs);
-
-  /*
-  if (targetContent === "Easy") {
-    level = "Easy";
-
-    clearMainContainer();
-
-    inputFieldValue();
-
-    countDown(easyLevelTime);
-  }
-
-  if (targetContent === "Hard") {
-    level = "Hard";
-
-    clearMainContainer();
-    inputFieldValue();
-
-    countDown(hardLevelTime);
-  }
-  */
 });
 
 btns.forEach((el) => {
@@ -189,13 +175,10 @@ submitBtn.addEventListener("click", function () {
   let results;
   try {
     results = eval(inputField.value);
-    // const results = eval(inputField.value);
   } catch (err) {
     alert(
       "Your input is invalid. Clear the input field and try then try again"
     );
-
-    // inputField.value = inputSum = "";
 
     return;
   }
@@ -204,7 +187,7 @@ submitBtn.addEventListener("click", function () {
     return;
   }
 
-  if (results !== timerData[numSetCounter].number) {
+  if (results !== Number(target.textContent)) {
     numSetCounter++;
 
     const incorrectAnswer =
@@ -213,7 +196,6 @@ submitBtn.addEventListener("click", function () {
     inputField.value = "";
     inputSum = "";
     playerScore = playerScore;
-    // return;
   } else {
     playerScore++;
     numSetCounter++;
@@ -227,12 +209,7 @@ submitBtn.addEventListener("click", function () {
     target.textContent =
       "";
 
-  // numSetCounter++;
-  // playerScore++;
-
   inputFieldValue();
-
-  console.log("You got it right");
 });
 
 const countDown = function (timeInSeconds) {
@@ -247,7 +224,11 @@ const countDown = function (timeInSeconds) {
       seconds
     ).padStart(2, 0)}`;
 
-    if (munites === 0 && seconds === 0) {
+    if (
+      (munites === 0 && seconds === 0) ||
+      playerScore === data.length ||
+      numSetCounter === data.length
+    ) {
       inputField.value = "";
       inputSum = "";
       game.classList.toggle("hidden-xaxis");
@@ -271,16 +252,10 @@ const countDown = function (timeInSeconds) {
 
 instructionBtn.addEventListener("click", function () {
   instructionsContainer.classList.toggle("hidden");
-  // intro.classList.toggle("hidden");
-
-  // intro.classList.toggle("hidden-xaxis");
-  // game.classList.toggle("hidden-xaxis");
-  // arrowBtn.style.animationPlayState = "paused";
 });
 
 playBtn.addEventListener("click", function () {
   instructionsContainer.classList.toggle("hidden");
-  // intro.classList.toggle("hidden");
 });
 
 viewScoreBtn.addEventListener("click", function () {
@@ -317,8 +292,6 @@ tryAgainBtn.addEventListener("click", function () {
   }, 100);
 });
 
-// console.log(typeof "Name");
-
 const options = {
   root: instructionsSectionBox,
   threshold: 0.3,
@@ -337,7 +310,6 @@ const animateSection = function (entries, observer) {
 const observer = new IntersectionObserver(animateSection, options);
 
 instructionsSections.forEach((section) => {
-  // console.log(section);
   observer.observe(section);
   section.classList.add("hidden-instructions");
 });

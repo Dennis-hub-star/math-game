@@ -4,26 +4,21 @@
   .main-container {
     width: 80rem;
     margin: 3rem auto;
-
-    /* height: 90rem; */
   }
 
   .instructions-container {
     padding-top: 3.5rem !important;
-
     margin-top: 10rem !important;
   }
 
   .instructions-sub-heading {
     font-size: 2rem;
-
     margin-bottom: 1.7rem;
   }
 
   .instructions-sections-container {
     margin: 5rem;
     padding: 3.5rem;
-    /* height: 40rem; */
   }
 }
 
@@ -52,7 +47,6 @@
   .instructions-sections-container {
     margin: 4rem;
     padding: 3rem;
-    /* height: 40rem; */
   }
   .instructions-parent {
     width: 51rem;
@@ -60,7 +54,6 @@
 
   .instructions-sub-heading {
     font-size: 1.8rem;
-
     margin-bottom: 1.7rem;
   }
 
@@ -80,23 +73,20 @@
 
   .intro-paragraph {
     width: 35rem;
-
     margin-top: 2rem;
   }
 
   .section li,
+  .intro-paragraph,
   .instructions-intro-paragraph {
-    font-size: 1.3rem;
-    line-height: 3rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
     color: #474444;
   }
 
   .intro {
-    font-size: 1.3rem;
-
     margin: 2rem auto;
     width: 50rem;
-    /* padding-bottom: 10rem; */
   }
 
   .game-on-paragraph {
@@ -107,8 +97,6 @@
   .btn-container {
     height: 23rem;
     width: 100%;
-
-    /* border-radius: 2rem; */
     padding: 0rem 2rem 0rem 2rem;
     margin-bottom: 0rem;
     transition: all 2s;
@@ -122,8 +110,6 @@
 
   .target-number,
   .score-number {
-    /* display: flex; */
-    /* text-align: center; */
     font-size: 3.5rem;
   }
 
@@ -131,19 +117,16 @@
     border-radius: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-
     height: 3.8rem;
     width: 24rem;
-
     font-size: 1.3rem;
     font-weight: 600;
-    color: #c06b4c;
+    color: #614cc0;
   }
 
   .btn {
     height: 4rem;
     width: 4rem;
-
     border-radius: 0.4rem;
     gap: 1.2rem;
   }
@@ -174,6 +157,14 @@
     margin: 1.5rem auto;
   }
 
+  .score-text {
+    margin-bottom: 1rem;
+  }
+
+  .score-number {
+    padding: 1rem;
+  }
+
   .instructions-parent {
     width: 41rem;
   }
@@ -186,19 +177,9 @@
   .instructions-sections-container {
     margin: 3rem;
     padding: 2.5rem;
-    /* height: 40rem; */
   }
 
-  /* .section li,
-  .instructions-intro-paragraph {
-    font-size: 1.3rem;
-    line-height: 3rem;
-    color: #474444;
-  } */
-
   .intro {
-    font-size: 1.3rem;
-    /* background-color: green; */
     margin: 2rem auto;
     width: 40rem;
     padding-bottom: 8rem;
@@ -206,7 +187,6 @@
 
   .instructions-sub-heading {
     font-size: 1.6rem;
-
     margin-bottom: 1.7rem;
   }
 
@@ -219,8 +199,10 @@
   }
 
   .section li,
+  .intro,
+  .intro-paragraph,
   .instructions-intro-paragraph {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 2.5rem;
   }
 }
@@ -251,7 +233,6 @@
   .instructions-sections-container {
     margin: 3rem;
     padding: 2rem;
-    /* height: 40rem; */
   }
 
   .instructions-sub-heading {
@@ -261,10 +242,15 @@
   }
 
   .section li,
+  .intro-paragraph,
+  .intro,
   .instructions-intro-paragraph {
-    font-size: 1.1rem;
-    line-height: 3rem;
+    font-size: 1.3rem !important;
     line-height: 2rem;
+  }
+
+  .intro {
+    font-size: 1.3rem;
   }
 
   .instructions-container {
@@ -272,11 +258,9 @@
 
     margin-top: 10rem !important;
   }
-
-  /* Animation testing */
 }
 
-/* Width 576 */
+/* Width 446 */
 
 @media (max-width: 28em) {
   .main-container {
@@ -284,8 +268,18 @@
     margin: 1.5rem auto;
   }
 
+  .section li,
+  .intro-paragraph,
+  .instructions-intro-paragraph {
+    font-size: 1.2rem !important;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+  }
+
   .instructions-parent {
-    width: 21rem;
+    width: 25rem;
   }
 
   .instructions-sections-container {
@@ -301,35 +295,24 @@
   }
 
   .btn {
-    height: 3.7rem;
-    width: 3.7rem;
-
+    height: 3.4rem;
+    width: 3.4rem;
     border-radius: 0.3rem;
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .intro {
     font-size: 1.3rem;
-    /* background-color: green; */
     margin: 2rem auto;
     width: 28rem;
     padding-bottom: 8rem;
   }
 
   .intro-paragraph {
-    width: 35rem;
-
+    width: 30rem;
     margin-top: 2rem;
-    padding: 0rem 4rem;
+    padding: 0rem 1rem;
   }
-
-  /* .intro {
-    font-size: 1.1rem;
-
-    margin: 2rem auto;
-    width: 50rem;
-  
-  } */
 
   .game-on-paragraph {
     font-size: 1.3rem;
@@ -346,8 +329,6 @@
 
   .target-number,
   .score-number {
-    /* display: flex; */
-    /* text-align: center; */
     font-size: 3rem;
   }
 
@@ -355,33 +336,138 @@
   .score-text {
     font-size: 1.7rem;
   }
-
-  /* .section li,
-  .instructions-intro-paragraph {
-    line-height: 1.6rem;
-  } */
-
-  /* Animation testing */
 }
 
-/* Width 448 */
+/* width 384px */
+@media (max-width: 24em) {
+  .main-container {
+    width: 34rem;
+  }
+
+  .submit-clear-btns {
+    gap: 5rem;
+  }
+
+  .instructions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0rem;
+    margin-right: 3.4rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+}
+/* width 352px */
+@media (max-width: 22em) {
+  .main-container {
+    width: 30rem;
+  }
+
+  .timed-btn,
+  .instructions-btn,
+  .submit,
+  .view-score-btn,
+  .try-again,
+  .untimed-btn,
+  .play-btn,
+  .clear-btn {
+    width: 8rem;
+    height: 2.7rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+  }
+
+  .buttons,
+  .math-operator-btns {
+    gap: 1.2rem;
+  }
+
+  .instructions-sections-container {
+    margin: 2.5rem;
+    padding: 1.2rem;
+  }
+
+  .intro-paragraph {
+    width: 26rem;
+  }
+
+  .heading {
+    font-size: 2.3rem;
+  }
+
+  .input-field {
+    height: 3.5rem;
+    width: 20rem;
+    color: #614cc0;
+  }
+}
+/* width 320px */
+@media (max-width: 20em) {
+  .main-container {
+    width: 27rem;
+  }
+
+  .math-operator-btns,
+  .btn {
+    font-size: 1.4rem;
+  }
+
+  .intro-paragraph {
+    width: 22rem;
+  }
+
+  .intro {
+    width: 22rem;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .timed-btn,
+  .instructions-btn,
+  .submit,
+  .view-score-btn,
+  .try-again,
+  .untimed-btn,
+  .play-btn,
+  .clear-btn {
+    width: 8rem;
+    height: 2.9rem;
+  }
+
+  .btn-container {
+    height: 18rem;
+  }
+}
+
+/* Width 288 */
 
 @media (max-width: 18em) {
   .main-container {
-    width: 31rem;
+    width: 24rem;
     margin: 1.5rem auto;
   }
 
   .btn-container {
-    height: 21.7rem;
+    height: 16rem;
     padding: 0rem 2rem 0rem 2rem;
     margin-bottom: 0rem;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
   }
 
   .btn {
-    height: 2.9rem;
-    width: 2.9rem;
+    height: 2.5rem;
+    width: 2.5rem;
 
     border-radius: 0.4rem;
 
@@ -400,10 +486,11 @@
   }
 
   .math-operator-btns .btn {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  .buttons .btn {
+  .buttons,
+  .btn {
     font-size: 1.2rem;
   }
 
@@ -415,7 +502,6 @@
     height: 3.5rem;
     width: 18.5rem;
     border-radius: 1.5rem;
-
     font-size: 1.4rem;
     font-weight: 700;
   }
@@ -424,7 +510,6 @@
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
-
     margin-bottom: 3rem;
   }
 
@@ -434,11 +519,17 @@
 
   .intro {
     font-size: 1.2rem;
+    width: 22rem;
+    margin: 0rem 1rem;
+  }
+  .heading {
+    font-size: 2rem;
   }
 
   .section li,
+  .intro-paragraph,
   .instructions-intro-paragraph {
-    font-size: 1.3rem;
+    font-size: 1.2rem !important;
     line-height: 2.5rem;
     color: #474444;
   }
@@ -455,43 +546,49 @@
   .untimed-btn,
   .play-btn,
   .clear-btn {
-    width: 8rem;
-    height: 2.7rem;
+    width: 7rem;
+    height: 2.5rem;
     font-size: 1.1rem;
     border-radius: 1rem;
+  }
+
+  .clear-icon,
+  .submit-icon {
+    height: 1.7rem;
+    width: 1.7rem;
   }
 
   .instructions {
     display: flex;
     gap: 1rem;
-
     align-items: center;
     justify-content: center;
     padding-left: 0rem;
     margin-left: -3rem;
-
-    /* margin-bottom: 4rem;
-    margin-top: 4rem; */
   }
   .arrow-btn {
     height: 2rem;
     width: 2rem;
     color: #614cc0;
-    /* animation: 3s linear 1s infinite alternate slidein; */
-
-    /* Animation testing */
     animation-name: slideLeft;
     animation-duration: 0.7s;
     animation-iteration-count: infinite;
   }
+}
 
-  /* .arrowBtn:hover {
-    animation-duration: 1s;
-  } */
-  /* 
-  @keyframes slideLeft {
-    50% {
-      transform: translateX(0.5rem);
-    }
-  } */
+@media (max-width: 17.5em) {
+  .intro {
+    width: 19rem;
+    margin: 0rem 1.5rem;
+  }
+
+  .intro-paragraph {
+    width: 19rem;
+  }
+
+  .clear-icon,
+  .submit-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
