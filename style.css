@@ -5,15 +5,9 @@
 }
 
 html {
-  /* font-size: 10px; */
-  /* 10px / 16px = 0.625 = 62.5 */
-  /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-  /* Only works if there is nothing absolutely positioned in relation to body */
-  /* overflow-y: hidden; */
   overflow: scroll;
   font-family: sans-serif;
-  /* HIDE SCROLL BAR */
 }
 
 ::-webkit-scrollbar {
@@ -23,6 +17,7 @@ html {
 .instructions-sections-container::-webkit-scrollbar {
   width: 6px !important;
   background-color: #e5ccc3;
+  /* background-color: white; */
   border-radius: 100px;
 }
 
@@ -187,7 +182,7 @@ body {
 }
 
 .intro-paragraph {
-  width: 43rem;
+  width: 45rem;
   text-align: center;
   margin-top: 2rem;
 }
@@ -293,6 +288,10 @@ body {
   background: linear-gradient(80deg, #e5ccc3, #6047df);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+.score-number {
+  padding: 3rem;
 }
 
 .count-down {
@@ -404,7 +403,7 @@ body {
 
 .completed {
   transform: translateY(0rem);
-  transition: all 1.5s;
+  transition: all 1s;
 }
 
 .view-score-btn,

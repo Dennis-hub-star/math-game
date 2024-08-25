@@ -15,6 +15,9 @@ const intro = document.querySelector(".intro");
 const target = document.querySelector(".target-number");
 const targetContainer = document.querySelector(".target");
 const gameCompleted = document.querySelector(".completed");
+const gameCompletedParagraph = document.querySelector(
+  ".game-completed-paragraph"
+);
 const viewScoreBtn = document.querySelector(".view-score-btn");
 const results = document.querySelector(".results");
 const feedbackContainer = document.querySelector(".feedback-container");
@@ -67,6 +70,7 @@ const easyLevelData = [
   { number: 77, setOfNumbers: [14, 31, 22, 9, 10, 28] },
 ];
 
+// Feedback messages
 const feedback = {
   score0:
     "You didn’t score any points this time. Review your strategies and try again. Practice will help you improve!",
@@ -92,13 +96,12 @@ const renderFeedBack = function (feedback) {
   feedbackContainer.insertAdjacentHTML("afterbegin", html);
 };
 
-// TIMER
-
 // RESABLE FUNCTIONS
 
+// This function returns a an array of buttons with a set of numbers for each round
 const timerNumCalc = function (data) {
   if (numSetCounter === data.length) return;
-  // const currentSet = data[numSetCounter].setOfNumbers;
+
   const currentSet = data[numSetCounter].setOfNumbers;
 
   target.textContent = data[numSetCounter].number;
@@ -115,25 +118,22 @@ const timerNumCalc = function (data) {
   return btnEls;
 };
 
-// console.log(timerNumCalc(easyLevelData));
-
+// For clearing the main container, whenever a new page needs to get displayed
 const clearMainContainer = function () {
   btnContainer.innerHTML = "";
   intro.classList.toggle("hidden-xaxis");
   game.classList.toggle("hidden");
-  // game.classList.add();
   setTimeout(() => {
     intro.classList.toggle("hidden");
     game.classList.remove("hidden-xaxis");
   }, 500);
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-
+// Computation of an input value
 const inputFieldValue = function (btnActivity) {
   data = level === "Easy" ? easyLevelData : hardLevelData;
-  // console.log(data);
-  if (numSetCounter === data.length) return;
+
+  if (numSetCounter === data.length) return; // This aids in the prevention of the code below from getting executed when numSetCounter exceeds Hard/Easy level data length
 
   timerNumCalc(data).forEach((el) =>
     el.addEventListener("click", function (e) {
@@ -147,13 +147,60 @@ const inputFieldValue = function (btnActivity) {
   );
 };
 
+// TIMER
+const countDown = function (timeInSeconds) {
+  let time = timeInSeconds;
+  const myInterval = setInterval(function () {
+    let munites = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    time = time - 1;
+
+    timer.textContent = `${String(munites).padStart(2, 0)}:${String(
+      seconds
+    ).padStart(2, 0)}`;
+
+    if (
+      (munites === 0 && seconds === 0) ||
+      playerScore === data.length ||
+      numSetCounter === data.length
+    ) {
+      if (munites === 0 && seconds === 0) {
+        gameCompletedParagraph.textContent =
+          "The clock has run out. You didn complete the puzzle in time, but don't be discouraged—try again!";
+      } else {
+        gameCompletedParagraph.textContent =
+          "You’ve successfully completed the game within the time limit! Now, let’s check your score.";
+      }
+
+      inputField.value = "";
+      inputSum = "";
+      game.classList.toggle("hidden-xaxis");
+      scoreNumber.textContent = playerScore;
+
+      setTimeout(function () {
+        game.classList.toggle("hidden");
+        gameCompleted.classList.toggle("hidden");
+
+        setTimeout(() => {
+          gameCompleted.classList.toggle("hidden-xaxis");
+        }, 500);
+      }, 1200);
+      clearInterval(myInterval);
+      timer.textContent = "00:00";
+    }
+  }, 1000);
+};
+
+/////// EVENT LISTENERS  ////////
+
+// Using event delegation to retreve the textContent of the target button
 introBtns.addEventListener("click", function (e) {
   const targetIntroBtn = e.target;
   const targetContent = targetIntroBtn.textContent === "Hard" ? "Hard" : "Easy";
-
   level = targetContent;
   instructionsBtnContainer.classList.toggle("hidden");
-  const gameTimeInSecs = level === "Easy" ? easyLevelTime : hardLevelTime;
+  const gameTimeInSecs = level === "Easy" ? easyLevelTime : hardLevelTime; // Used the text content of the target button to get a period within which the level(Hard/Easy) picked should be completed
   arrowBtn.style.animationPlayState = "paused";
 
   clearMainContainer();
@@ -163,6 +210,7 @@ introBtns.addEventListener("click", function (e) {
   countDown(gameTimeInSecs);
 });
 
+// Looping  a nodelist of math-operator buttons.
 btns.forEach((el) => {
   el.addEventListener("click", function (e) {
     const target = e.target.textContent;
@@ -212,43 +260,19 @@ submitBtn.addEventListener("click", function () {
   inputFieldValue();
 });
 
-const countDown = function (timeInSeconds) {
-  let time = timeInSeconds;
-  const myInterval = setInterval(function () {
-    let munites = Math.floor(time / 60);
-    let seconds = time % 60;
+tryAgainBtn.addEventListener("click", function () {
+  numSetCounter = 0;
+  playerScore = 0;
+  arrowBtn.style.animationPlayState = "running";
+  results.classList.toggle("hidden");
+  intro.classList.toggle("hidden");
+  instructionsBtnContainer.classList.toggle("hidden");
 
-    time = time - 1;
-
-    timer.textContent = `${String(munites).padStart(2, 0)}:${String(
-      seconds
-    ).padStart(2, 0)}`;
-
-    if (
-      (munites === 0 && seconds === 0) ||
-      playerScore === data.length ||
-      numSetCounter === data.length
-    ) {
-      inputField.value = "";
-      inputSum = "";
-      game.classList.toggle("hidden-xaxis");
-      scoreNumber.textContent = playerScore;
-
-      setTimeout(function () {
-        game.classList.toggle("hidden");
-        gameCompleted.classList.toggle("hidden");
-
-        setTimeout(() => {
-          gameCompleted.classList.toggle("hidden-xaxis");
-        }, 500);
-      }, 1200);
-      clearInterval(myInterval);
-      timer.textContent = "00:00";
-    }
-  }, 1000);
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  setTimeout(function () {
+    intro.classList.toggle("hidden-xaxis");
+    results.classList.toggle("hidden-xaxis");
+  }, 100);
+});
 
 instructionBtn.addEventListener("click", function () {
   instructionsContainer.classList.toggle("hidden");
@@ -278,20 +302,14 @@ viewScoreBtn.addEventListener("click", function () {
   if (playerScore === 10) renderFeedBack(feedback.score10);
 });
 
-tryAgainBtn.addEventListener("click", function () {
-  numSetCounter = 0;
-  playerScore = 0;
-  arrowBtn.style.animationPlayState = "running";
-  results.classList.toggle("hidden");
-  intro.classList.toggle("hidden");
-  instructionsBtnContainer.classList.toggle("hidden");
+clearBtn.addEventListener("click", function () {
+  inputField.value = inputSum = "";
 
-  setTimeout(function () {
-    intro.classList.toggle("hidden-xaxis");
-    results.classList.toggle("hidden-xaxis");
-  }, 100);
+  btnContainer.innerHTML = inputField.value = inputSum = "";
+  inputFieldValue(true);
 });
 
+// ANIMATION OF INSTRUCTIONS CONTENT
 const options = {
   root: instructionsSectionBox,
   threshold: 0.3,
@@ -312,11 +330,4 @@ const observer = new IntersectionObserver(animateSection, options);
 instructionsSections.forEach((section) => {
   observer.observe(section);
   section.classList.add("hidden-instructions");
-});
-
-clearBtn.addEventListener("click", function () {
-  inputField.value = inputSum = "";
-
-  btnContainer.innerHTML = inputField.value = inputSum = "";
-  inputFieldValue(true);
 });
