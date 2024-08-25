@@ -36,7 +36,7 @@ const playBtn = document.querySelector(".play-btn");
 const instructionsSections = document.querySelectorAll(".section");
 
 const hardLevelTime = 360;
-const easyLevelTime = 10;
+const easyLevelTime = 180;
 let numSetCounter = 0;
 let inputSum = "";
 let playerScore = 0;
