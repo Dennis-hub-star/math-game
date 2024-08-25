@@ -224,9 +224,7 @@ submitBtn.addEventListener("click", function () {
   try {
     results = eval(inputField.value);
   } catch (err) {
-    alert(
-      "Your input is invalid. Clear the input field and try then try again"
-    );
+    alert("Invalid input! Please complete your expression and try again.");
 
     return;
   }
