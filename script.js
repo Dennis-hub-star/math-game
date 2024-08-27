@@ -238,7 +238,10 @@ submitBtn.addEventListener("click", function () {
 
     const incorrectAnswer =
       typeof results === "number" ? results : inputField.value;
-    alert(`${incorrectAnswer} is not the target`);
+    // alert(`${incorrectAnswer} is not the target`);
+    alert(
+      `${incorrectAnswer} isn’t correct. The target is ${target.textContent}. Keep going!`
+    );
     inputField.value = "";
     inputSum = "";
     playerScore = playerScore;
